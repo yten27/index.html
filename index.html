@@ -1,25 +1,157 @@
 <!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFC/RFID Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            font-size: 1.2em;
+        }
+        .answer {
+            margin: 10px 0;
+        }
+        .button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        #result-section {
+            display: none;
+            text-align: center;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
 
-<html> 
+    <header>
+        <h1>NFC/RFID Quiz</h1>
+        <p>Teste dein Wissen über NFC und RFID!</p>
+    </header>
 
-    <head> 
-        <meta charset="UTF-8">
-	    <link rel="stylesheet" type="text/css" href="style.css">
-		<title>Aufgabe 1 - CSS lernen</title>
-    </head> 
+    <section id="quiz-section">
+        <h2>Beantworte die folgenden Fragen:</h2>
+        <form id="quiz-form">
+            <div class="question">
+                <p>1. Was ist NFC?</p>
+                <label class="answer"><input type="radio" name="q1" value="1"> Near Field Communication</label><br>
+                <label class="answer"><input type="radio" name="q1" value="0"> National Financial Corporation</label><br>
+                <label class="answer"><input type="radio" name="q1" value="0"> Normal Frequency Communication</label><br>
+            </div>
+            <div class="question">
+                <p>2. Was bedeutet RFID?</p>
+                <label class="answer"><input type="radio" name="q2" value="1"> Radio Frequency Identification</label><br>
+                <label class="answer"><input type="radio" name="q2" value="0"> Random Frequency Identification</label><br>
+                <label class="answer"><input type="radio" name="q2" value="0"> Radio Functional Identification</label><br>
+            </div>
+            <div class="question">
+                <p>3. Welches Gerät kann NFC verwenden?</p>
+                <label class="answer"><input type="radio" name="q3" value="1"> Smartphones</label><br>
+                <label class="answer"><input type="radio" name="q3" value="0"> Taschenlampen</label><br>
+                <label class="answer"><input type="radio" name="q3" value="0"> Fernbedienungen</label><br>
+            </div>
+            <div class="question">
+                <p>4. In welchem Bereich wird RFID häufig verwendet?</p>
+                <label class="answer"><input type="radio" name="q4" value="1"> Lagerverwaltung</label><br>
+                <label class="answer"><input type="radio" name="q4" value="0"> Backen</label><br>
+                <label class="answer"><input type="radio" name="q4" value="0"> Gärtnerei</label><br>
+            </div>
+            <div class="question">
+                <p>5. Was ist ein typischer Vorteil von NFC?</p>
+                <label class="answer"><input type="radio" name="q5" value="1"> Schnelle Kommunikation über kurze Distanzen</label><br>
+                <label class="answer"><input type="radio" name="q5" value="0"> Langsame Datenübertragung auf große Distanzen</label><br>
+                <label class="answer"><input type="radio" name="q5" value="0"> Keine Verbindungsprobleme</label><br>
+            </div>
+            <button type="button" class="button" onclick="submitQuiz()">Ergebnisse anzeigen</button>
+        </form>
+    </section>
 
+    <section id="result-section">
+        <h2>Ergebnis</h2>
+        <p id="result-message"></p>
+        <button class="button" onclick="restartQuiz()">Nochmal spielen</button>
+    </section>
 
-	<body>
-		<h1>Ich bin eine HTML Seite </h1>
-		<div id="id1">
-		    <div>mach mich blau</div>
-		</div>
-		<div class="class1">div mit Klasse class1</div>
-		<div class="class1">
-			div mit Klasse class1
-			<div class="class2">Blau ist auch für mich DIE Wahl</div>
-		</div>
-		<div class="class2">div mit Klasse class2</div>
-	</body>
+    <footer>
+        <p>&copy; 2025 NFC/RFID Quiz</p>
+    </footer>
 
+    <script>
+        let score = 0;
+
+        // Überprüft die Antworten und zeigt das Ergebnis
+        function submitQuiz() {
+            // Fragen und Antworten
+            const answers = {
+                q1: "1",
+                q2: "1",
+                q3: "1",
+                q4: "1",
+                q5: "1"
+            };
+
+            // Überprüfen der Antworten
+            score = 0;
+            for (let question in answers) {
+                const selected = document.querySelector(`input[name="${question}"]:checked`);
+                if (selected && selected.value === answers[question]) {
+                    score++;
+                }
+            }
+
+            // Anzeige der Ergebnisse
+            document.getElementById('quiz-section').style.display = 'none';
+            document.getElementById('result-section').style.display = 'block';
+            document.getElementById('result-message').innerText = `Du hast ${score} von 5 Fragen richtig beantwortet!`;
+        }
+
+        // Neustart des Quiz
+        function restartQuiz() {
+            document.getElementById('result-section').style.display = 'none';
+            document.getElementById('quiz-section').style.display = 'block';
+            document.getElementById('quiz-form').reset();
+            score = 0;
+        }
+    </script>
+
+</body>
 </html>
