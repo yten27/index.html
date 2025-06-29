@@ -6,7 +6,7 @@
     <title>NFC Demo & Zukunft - Quiz und Bewertung</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             background-color: #f4f4f9;
             margin: 0;
             padding: 0;
@@ -42,15 +42,12 @@
             width: 100%;
             margin: 20px 0;
             overflow-y: auto;
-            height: 75vh;
-            display: grid;
-            grid-template-columns: 1fr; /* Eine Spalte für kleine Bildschirme */
-            gap: 15px;
+            height: auto;
         }
 
         .question {
+            margin-bottom: 20px;
             font-size: 1.1em;
-            margin-bottom: 15px;
         }
 
         .answer {
@@ -95,12 +92,6 @@
         #result-section {
             display: none;
         }
-
-        @media (min-width: 768px) {
-            section {
-                grid-template-columns: 1fr 1fr; /* Zwei Spalten für größere Bildschirme */
-            }
-        }
     </style>
 </head>
 <body>
@@ -116,8 +107,8 @@
         <!-- Frage 1: NFC vs. klassische RFID-Systeme -->
         <div class="question">
             <p>1. Was unterscheidet NFC grundlegend von klassischen RFID-Systemen?</p>
+            <label class="answer"><input type="radio" name="q1" value="0"> NFC ist nur für eine Richtung geeignet</label><br>
             <label class="answer"><input type="radio" name="q1" value="1"> NFC ermöglicht bidirektionale Kommunikation und kann sowohl als Leser als auch als Transponder agieren</label><br>
-            <label class="answer"><input type="radio" name="q1" value="0"> NFC kann nur in eine Richtung kommunizieren, RFID dagegen in beide Richtungen</label><br>
             <label class="answer"><input type="radio" name="q1" value="0"> NFC benötigt zwingend eine Internetverbindung, RFID nicht</label><br>
         </div>
 
