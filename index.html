@@ -101,31 +101,31 @@
     <section id="quiz-section">
         <h2>Fragen zur NFC-Demo und Zukunftstechnologien</h2>
         
-        <!-- Frage 1: NFC-Kompatibilität iOS -->
+        <!-- Frage 1: NFC vs. klassische RFID-Systeme -->
         <div class="question">
-            <p>1. Ab welchem iOS-Gerät ist NFC kompatibel?</p>
-            <label class="answer"><input type="radio" name="q1" value="0"> iPhone 6 und höher</label><br>
-            <label class="answer"><input type="radio" name="q1" value="1"> iPhone XS und höher</label><br>
-            <label class="answer"><input type="radio" name="q1" value="0"> iPhone 5 und höher</label><br>
-        </div>
-        
-        <!-- Frage 2: Automatische Nachbestellung -->
-        <div class="question">
-            <p>2. Wann wird eine Nachbestellung automatisch ausgelöst?</p>
-            <label class="answer"><input type="radio" name="q2" value="0"> Wenn der Bestand um 10% reduziert wird</label><br>
-            <label class="answer"><input type="radio" name="q2" value="1"> Wenn ein Schwellenwert unterschritten wird</label><br>
-            <label class="answer"><input type="radio" name="q2" value="0"> Wenn die Lieferzeit überschritten wird</label><br>
+            <p>1. Was unterscheidet NFC grundlegend von klassischen RFID-Systemen in Bezug auf Kommunikation und Einsatzmöglichkeiten?</p>
+            <label class="answer"><input type="radio" name="q1" value="1"> NFC erlaubt bidirektionale Kommunikation und kann sowohl als Leser als auch als Transponder agieren</label><br>
+            <label class="answer"><input type="radio" name="q1" value="0"> NFC kann nur in eine Richtung kommunizieren, RFID dagegen in beide Richtungen</label><br>
+            <label class="answer"><input type="radio" name="q1" value="0"> NFC benötigt zwingend eine Internetverbindung, RFID nicht</label><br>
         </div>
 
-        <!-- Frage 3: Nachhaltige Energieverwaltung in Smart Cities -->
+        <!-- Frage 2: NFC Betriebsmodi -->
         <div class="question">
-            <p>3. Welche nachhaltige Energieverwaltung wird in zukünftigen Smart Cities implementiert?</p>
-            <label class="answer"><input type="radio" name="q3" value="1"> Mülltonnen mit RFID-Technologie, die automatisch Füllstände erfassen</label><br>
-            <label class="answer"><input type="radio" name="q3" value="0"> Solarbetriebene Straßenlaternen</label><br>
-            <label class="answer"><input type="radio" name="q3" value="0"> Windkraftanlagen für die Stadtbeleuchtung</label><br>
+            <p>2. Welche drei Betriebsmodi bietet NFC – und wofür kann man sie im Alltag konkret einsetzen?</p>
+            <label class="answer"><input type="radio" name="q2" value="1"> Read/Write, Peer-to-Peer, Card Emulation – z. B. für Bezahlen oder Datentausch</label><br>
+            <label class="answer"><input type="radio" name="q2" value="0"> Connect-Modus, Print-Modus, Share-Modus – z. B. für WLAN-Übertragung</label><br>
+            <label class="answer"><input type="radio" name="q2" value="0"> Senden, Speichern, Synchronisieren – z. B. bei der Nutzung von NFC-Tags im Browser</label><br>
         </div>
 
-        <!-- Frage 4: Unterschied zwischen Bluetooth und NFC -->
+        <!-- Frage 3: Passive NFC-Tags -->
+        <div class="question">
+            <p>3. Wieso benötigen passive NFC-Tags keine eigene Stromversorgung – und welche Rolle spielt dabei das Magnetfeld?</p>
+            <label class="answer"><input type="radio" name="q3" value="1"> Das induktive Magnetfeld überträgt Energie direkt an den Chip, der dadurch aktiviert wird</label><br>
+            <label class="answer"><input type="radio" name="q3" value="0"> Das Magnetfeld enthält gespeicherte Energie, die per Bluetooth an das Tag gesendet wird</label><br>
+            <label class="answer"><input type="radio" name="q3" value="0"> Die Tags laden sich über Sonnenlicht auf, das vom Display des Smartphones reflektiert wird</label><br>
+        </div>
+
+        <!-- Frage 4: Bluetooth vs NFC -->
         <div class="question">
             <p>4. Was unterscheidet Bluetooth von NFC?</p>
             <label class="answer"><input type="radio" name="q4" value="1"> Bluetooth ist für längere Distanzen, NFC für sehr kurze Distanzen (max. 10 cm)</label><br>
@@ -133,7 +133,7 @@
             <label class="answer"><input type="radio" name="q4" value="0"> Bluetooth benötigt immer eine App, NFC nicht</label><br>
         </div>
 
-        <!-- Frage 5: Welche Art von Strahlung sendet NFC aus? -->
+        <!-- Frage 5: NFC-Strahlung -->
         <div class="question">
             <p>5. Welche Art von Strahlung sendet NFC aus?</p>
             <label class="answer"><input type="radio" name="q5" value="1"> Radiowellen im Frequenzbereich von 13,56 MHz</label><br>
@@ -141,7 +141,7 @@
             <label class="answer"><input type="radio" name="q5" value="0"> Mikrowellenstrahlung</label><br>
         </div>
 
-        <!-- Frage 6: Was ist der maximale Abstand von NFC-Geräten? -->
+        <!-- Frage 6: NFC maximaler Abstand -->
         <div class="question">
             <p>6. Was ist der maximale Abstand von NFC-Geräten?</p>
             <label class="answer"><input type="radio" name="q6" value="1"> Maximal 10 cm</label><br>
@@ -149,9 +149,33 @@
             <label class="answer"><input type="radio" name="q6" value="0"> Maximal 50 cm</label><br>
         </div>
 
+        <!-- Frage 7: NFC-Kompatibilität iOS -->
+        <div class="question">
+            <p>7. Ab welchem iOS-Gerät ist NFC kompatibel?</p>
+            <label class="answer"><input type="radio" name="q7" value="0"> iPhone 6 und höher</label><br>
+            <label class="answer"><input type="radio" name="q7" value="1"> iPhone XS und höher</label><br>
+            <label class="answer"><input type="radio" name="q7" value="0"> iPhone 5 und höher</label><br>
+        </div>
+        
+        <!-- Frage 8: Automatische Nachbestellung -->
+        <div class="question">
+            <p>8. Wann wird eine Nachbestellung automatisch ausgelöst?</p>
+            <label class="answer"><input type="radio" name="q8" value="1"> Wenn ein Schwellenwert unterschritten wird</label><br>
+            <label class="answer"><input type="radio" name="q8" value="0"> Wenn der Bestand um 10% reduziert wird</label><br>
+            <label class="answer"><input type="radio" name="q8" value="0"> Wenn die Lieferzeit überschritten wird</label><br>
+        </div>
+
+        <!-- Frage 9: Nachhaltige Energieverwaltung in Smart Cities -->
+        <div class="question">
+            <p>9. Welche nachhaltige Energieverwaltung wird in zukünftigen Smart Cities implementiert?</p>
+            <label class="answer"><input type="radio" name="q9" value="1"> Mülltonnen mit RFID-Technologie, die automatisch Füllstände erfassen</label><br>
+            <label class="answer"><input type="radio" name="q9" value="0"> Solarbetriebene Straßenlaternen</label><br>
+            <label class="answer"><input type="radio" name="q9" value="0"> Windkraftanlagen für die Stadtbeleuchtung</label><br>
+        </div>
+
         <!-- Bewertung der Präsentation -->
         <div class="question">
-            <p>7. Wie bewertest du diese Präsentation?</p>
+            <p>10. Wie bewertest du diese Präsentation?</p>
             <label class="answer"><input type="radio" name="rating" value="1"> Sehr gut</label><br>
             <label class="answer"><input type="radio" name="rating" value="0"> Gut</label><br>
             <label class="answer"><input type="radio" name="rating" value="-1"> Neutral</label><br>
@@ -183,7 +207,10 @@
                 q3: "1",
                 q4: "1",
                 q5: "1",
-                q6: "1"
+                q6: "1",
+                q7: "1",
+                q8: "1",
+                q9: "1"
             };
 
             score = 0;
@@ -199,7 +226,7 @@
                 rating = parseInt(selectedRating.value);
             }
 
-            let resultMessage = `Du hast ${score} von 6 Fragen richtig beantwortet.`;
+            let resultMessage = `Du hast ${score} von 9 Fragen richtig beantwortet.`;
             if (rating === 1) {
                 resultMessage += " Vielen Dank für deine positive Bewertung!";
             } else if (rating === 0) {
